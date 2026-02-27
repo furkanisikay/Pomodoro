@@ -16,9 +16,6 @@ Bu proje, odaklı çalışma ve planlı mola döngülerini basit bir masaüstü 
 - **Sesli bildirim akışı** (`Fonk.SesCal`) ile süre sonu uyarıları.
 - **DevExpress bileşenleri** ile ilerleme çubuğu ve UI öğeleri.
 
-## Güvenlik Denetimi
-
-Kod tabanında hardcoded şifre, API anahtarı veya `C:\Users\...` benzeri yerel mutlak dosya yolu tarandı. Uygulama kodunda bu tip bir gizli bilgiye rastlanmadı. Ses dosyaları `Application.StartupPath` üzerinden göreli olarak çağrıldığı için kullanıcıya özel yol bağımlılığı bulunmuyor.
 
 ## Hızlı Başlangıç
 
@@ -39,15 +36,6 @@ msbuild Pomodoro.csproj /p:Configuration=Release
 2. **.NET Framework 4.5.2 Developer Pack** yüklü olmalı.
 3. Projede kullanılan **DevExpress v16.2** bileşenlerinin sistemde erişilebilir olduğundan emin olun.
 4. Derleme için `msbuild` komutunu Visual Studio Developer Command Prompt üzerinden çalıştırın.
-
-## Refactoring Öncelikleri (İlk 3 Adım)
-
-1. **`CheckForIllegalCrossThreadCalls = false` kullanımını kaldırın**  
-   UI güncellemelerini `Invoke/BeginInvoke` ile tek bir yardımcı metoda taşıyarak thread güvenliğini artırın.
-2. **`Sayac` içinde thread üretimini sadeleştirin**  
-   Her `Tick` olayında yeni `Thread` açmak yerine tek zamanlayıcı akışında event tetikleyin; gereksiz kaynak tüketimini düşürün.
-3. **Süre/mod kurallarını tek bir yapılandırma listesine alın**  
-   `Form2` içindeki `sira` kontrollerini (0..8) sabit/enum + dizi temelli bir akış modeline taşıyarak bakım maliyetini azaltın.
 
 ## Katkı
 
