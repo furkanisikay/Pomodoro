@@ -147,15 +147,14 @@ namespace Pomodoro
         private float GetFontSize(Label label, string text,
             int margin, float min_size, float max_size)
         {
-            // Only bother if there's text.
+            // Yalnızca metin varsa hesaplama yap.
             if (text.Length == 0) return min_size;
 
-            // See how much room we have, allowing a bit
-            // for the Label's internal margin.
+            // Label iç boşluğunu da hesaba katarak kullanılabilir alanı bul.
             int wid = label.DisplayRectangle.Width - margin;
             int hgt = label.DisplayRectangle.Height - margin;
 
-            // Make a Graphics object to measure the text.
+            // Metin boyutunu ölçmek için Graphics nesnesi oluştur.
             using (Graphics gr = label.CreateGraphics())
             {
                 while (max_size - min_size > 0.1f)
@@ -163,7 +162,7 @@ namespace Pomodoro
                     float pt = (min_size + max_size) / 2f;
                     using (Font test_font = new Font(label.Font.FontFamily, pt))
                     {
-                        // See if this font is too big.
+                        // Yazı tipi boyutunun alana sığıp sığmadığını kontrol et.
                         SizeF text_size = gr.MeasureString(text, test_font);
                         if ((text_size.Width > wid) || (text_size.Height > hgt))
                             max_size = pt;
