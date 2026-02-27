@@ -31,6 +31,8 @@ msbuild Pomodoro.csproj /p:Configuration=Release
 .\bin\Release\Pomodoro.exe
 ```
 
+> Kendi fork'unuzu kullanıyorsanız `git clone` satırındaki URL'yi kendi depo adresinizle değiştirin.
+
 ## Ortam Kurulumu
 
 1. Windows üzerinde Visual Studio (Desktop development with .NET) kurun.

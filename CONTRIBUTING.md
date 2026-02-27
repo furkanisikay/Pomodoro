@@ -13,8 +13,10 @@ Pomodoro projesine katkı sağlamak istediğiniz için teşekkürler.
 
 ## Kodlama Kuralları
 
-- Sınıf, metot ve değişken adlarında İngilizce ve anlaşılır isimler kullanın.
+- Sınıf, metod ve değişken adlarında İngilizce ve anlaşılır isimler kullanın.
 - Yorum satırları ve dokümantasyon metinlerini Türkçe yazın.
+- Bu yaklaşım, uluslararası kod standartlarını korurken Türkiye'deki geliştiriciler için öğrenme ve bakım sürecini hızlandırmak amacıyla tercih edilir.
+- Uluslararası katkılarda İngilizce-only açıklama/yorum da kabul edilir; mevcut dosya diliyle tutarlı kalınması yeterlidir.
 - Mevcut mimariyi bozmadan, minimum gerekli değişiklik prensibiyle ilerleyin.
 
 ## Doğrulama
